@@ -1,3 +1,4 @@
+import { defineConfig } from 'astro/config';
 import { defineCollection, z } from "astro:content";
 
 const postCollection = defineCollection({
@@ -7,6 +8,10 @@ const postCollection = defineCollection({
         image: image(),
         title: z.string(),
     })
+});
+
+export default defineConfig({
+    integrations: [],
 });
 
 export const collections = {

@@ -4,10 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 import H1 from "../../components/H1.astro";
 import Main from "../../components/Main.astro";
 import { Image } from "astro:assets";
-import { getEntries } from "astro:content";
 import { getEntryBySlug } from "astro:content";
 
-export const prerender = true;
+// export const prerender = true;
 
 const {slug} = Astro.params;
 const post = await getEntryBySlug("posts", slug as string);
@@ -15,6 +14,7 @@ const post = await getEntryBySlug("posts", slug as string);
 if(!post){
     return Astro.redirect('/404');
 }
+
 const {Content} = await post.render();
 ---
 

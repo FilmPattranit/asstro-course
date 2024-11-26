@@ -3,22 +3,20 @@ import type { APIRoute } from "astro";
 export async function GET() {
 
   return new Response(
-    JSON.stringify({msg: "Hello world"}), {
+    JSON.stringify({msg: 'Hello world'}), {
       status: 200,
       headers: {
-        "Content-Type": "application/json"
-      }
-    }
-  );
+        'Content-Type': 'application/json'
+      },
+    });
 }
 
 export const POST: APIRoute = async ({params, request}) => {
-    const body = await request.json()
-    return new Response(
-      JSON.stringify(body), {
+    const body = await request.json();
+    return new Response( JSON.stringify(body), {
         status: 200,
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         }
       }
     );
